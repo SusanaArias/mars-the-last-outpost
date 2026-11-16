@@ -1,0 +1,39 @@
+:root{--bg:#0e0809;--pn:#241619;--ink:#f3e3d6;--mu:#b89c8c;--ac:#ff8a4c;--ok:#5fd8cf;--bad:#ff6b5e;--ln:#4a2f30;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0809}}
+:root[data-theme="dark"]{--bg:#0e0809}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.4 "Chakra Petch",system-ui,sans-serif;overflow:hidden}
+#cv{position:fixed;inset:0;width:100%;height:100%;touch-action:none}
+#hud{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;padding:8px;pointer-events:none;display:flex;flex-direction:column;gap:6px;z-index:3}
+#bars{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.m,.chip{display:flex;align-items:center;gap:5px;background:rgba(20,12,14,.8);border:1px solid var(--ln);border-radius:20px;padding:2px 9px;font-size:12px}
+.m i{width:42px;height:6px;background:var(--ln);border-radius:4px;overflow:hidden}
+.m b{display:block;height:100%;background:var(--ok);transition:width .6s}
+.m.e b{background:#ffc15a}.m.f b{background:#a6e05a}.m.s b{background:#a99cff}.m.d b{background:var(--bad)}
+.m.low{border-color:var(--bad);animation:pl 1.2s infinite}
+@keyframes pl{50%{box-shadow:0 0 10px var(--bad)}}
+#tasks{align-self:flex-start;max-width:250px;background:rgba(20,12,14,.85);border:1px solid var(--ln);border-radius:12px;padding:8px 11px;font-size:12px}
+#tasks h3{margin:0 0 4px;font-size:13px}
+.t{padding:3px 0}.t small{display:block;color:var(--mu)}.t.cur{color:#ffc15a}.t.dn{opacity:.5;text-decoration:line-through}
+#toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 170px);display:flex;flex-direction:column;gap:6px;width:min(420px,92vw);pointer-events:none;z-index:5}
+.to{background:rgba(20,12,14,.94);border-left:4px solid var(--ok);padding:8px 12px;border-radius:8px;font-size:12px;animation:in .3s}
+@keyframes in{from{opacity:0;transform:translateY(-8px)}}
+#pad{position:fixed;left:0;right:0;bottom:env(safe-area-inset-bottom,0px);display:flex;justify-content:space-between;align-items:center;padding:12px 16px;pointer-events:none;z-index:3}
+#pad button{pointer-events:auto}
+.dp{display:grid;grid-template-columns:repeat(3,52px);grid-template-rows:repeat(2,52px);gap:4px}
+.dp .u{grid-column:2;grid-row:1}.dp .l{grid-column:1;grid-row:2}.dp .dn{grid-column:2;grid-row:2}.dp .r{grid-column:3;grid-row:2}
+button{font:inherit;color:var(--ink);background:rgba(36,22,25,.85);border:1.5px solid var(--ac);border-radius:10px;padding:10px 12px;min-height:44px;cursor:pointer;text-align:left;touch-action:none;user-select:none;-webkit-user-select:none}
+button:hover{background:rgba(255,138,76,.2)}
+button:focus-visible{outline:3px solid var(--ok);outline-offset:2px}
+button.main{background:var(--ac);color:#1a0d08;font-weight:700;text-align:center}
+#actb{min-width:140px;min-height:60px;font-size:16px}
+#modal{position:fixed;inset:0;background:rgba(8,4,6,.74);display:flex;align-items:center;justify-content:center;padding:14px;z-index:10;overflow:auto}
+.box{background:var(--pn);border:1px solid var(--ln);border-radius:14px;padding:18px;max-width:520px;width:100%;max-height:92vh;overflow:auto;animation:in .4s}
+.box h2{margin:0 0 6px}.box button{display:block;width:100%;margin:8px 0}
+.edu{border-left:4px solid var(--ok);padding:6px 12px;margin:10px 0;background:rgba(95,216,207,.1)}
+.mu{color:var(--mu);font-size:12px}.big{font-size:44px;font-weight:700;margin:0;color:var(--ac)}
+.hide{display:none!important}
+#fade{position:fixed;inset:0;background:#0e0809;opacity:0;pointer-events:none;z-index:6;display:flex;align-items:center;justify-content:center;font:700 40px "Chakra Petch",sans-serif;color:#ffc15a}
+#prm{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 104px);background:rgba(20,12,14,.88);border:1px solid #ffc15a;border-radius:20px;padding:4px 14px;font-size:13px;z-index:4;pointer-events:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
